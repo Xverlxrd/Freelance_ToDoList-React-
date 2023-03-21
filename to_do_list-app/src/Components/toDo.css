@@ -1,0 +1,224 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+#root{
+    height: 100vh;
+    background-color: #EEEEEE;
+}
+.todo__title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 116px;
+    color: #007FDB;
+    text-transform: uppercase;
+}
+.todo__container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1600px;
+    height: 100%;
+}
+.todo__content{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    row-gap: 23px;
+}
+.todo__date_container{
+    position: relative;
+}
+.todo__datatime_container{
+    position: absolute;
+    bottom: 13px;
+    right: 28px;
+}
+.todo__date{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-align: right;
+}
+.todo__time{
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    color: #FFFFFF;
+}
+
+.todo__form_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+.todo__input{
+    padding: 10px 12px;
+    width: 275px;
+    height: 49px;
+    background: #EBEFF2;
+    border-radius: 5px;
+    background: #EBEFF2;
+    border: 0px;
+}
+.todo__btn{
+    display: flex;
+    column-gap: 1px;
+}
+.todo__btn_create{
+    background-color: #20EEB0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 58.4px;
+    height: 49px;
+    border-radius: 5px 0px 0px 5px;
+}
+.todo__btn_dropdown{
+    background-color: #20EEB0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28.6px;
+    height: 49px;
+    border-radius: 0px 5px 5px 0px;
+}
+.todo__icon{
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+
+.todo__components{
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    align-items: center;
+    width: 100%;
+}
+.list__container{
+    width: 373px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.todo__item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo__item_about{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.todo__item_title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0D0D0D;
+}
+.todo__item_datetime{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #888888;
+}
+.todo__item_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 18px;
+}
+.todo__item_do{
+    background: #ffe0a6;
+    width: 20px;
+    height: 20px;
+}
+.todo__item_delete{
+    height: 20px;
+    width: 20px;
+}
