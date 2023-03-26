@@ -2,12 +2,16 @@ import React from 'react';
 import '../Components/toDo.css';
 import ToDoItem from './toDoItem';
 
-function ToDoList() {
-    return ( 
+function ToDoList({ posts, remove }) {
+
+
+    return (
         <div className='list__container'>
-            <ToDoItem/>
+            {posts.map((post) =>
+                <ToDoItem delete={remove} post={post} key={post.id} />
+            )}
         </div>
-     );
+    );
 }
 
 export default ToDoList;
