@@ -13,6 +13,7 @@ function ToDoForm({create}) {
         }
         create(newPost)
         setPost({title: ''})
+        
     }
 
     function dropDown() {

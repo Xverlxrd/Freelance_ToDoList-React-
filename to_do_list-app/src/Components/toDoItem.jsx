@@ -7,7 +7,7 @@ function ToDoItem(props) {
         <div className='todo__item'>
             <div className="todo__item_about">
                 <h3 className="todo__item_title"> {props.post.title}</h3>
-                <p className="todo__item_datetime">{props.time}</p>
+                <p className="todo__item_datetime">Today at {props.currenttime}</p>
             </div>
 
             <div className="todo__item_btn">

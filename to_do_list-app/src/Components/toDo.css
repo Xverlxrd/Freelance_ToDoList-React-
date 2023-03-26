@@ -125,6 +125,7 @@ select {
     line-height: 22px;
     color: #FFFFFF;
     text-align: right;
+    font-family: 'Russo One', sans-serif;
 }
 
 .todo__time {
@@ -132,6 +133,7 @@ select {
     font-size: 48px;
     line-height: 58px;
     color: #FFFFFF;
+    font-family: 'Russo One', sans-serif;
 }
 
 .todo__form_container {

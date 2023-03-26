@@ -8,7 +8,6 @@ function ToDo() {
     const [currenttime, setCurrentTime] = useState('')
     useEffect(() => {
         const intervalId = setInterval(() => {
-            let plus = 3; // Сколько времени прибавляем (+3 это время по Москве)
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'http://worldtimeapi.org/api/timezone/Europe/Moscow', false); // Делаем запрос по Лондону
             xhr.send(); // отправляем
@@ -18,9 +17,8 @@ function ToDo() {
                 let time = xhr.responseText;
                 let z = JSON.parse(time).utc_datetime;
                 let time1 = new Date(z).getTime();
-                let timestampPlus = time1 + (3 * 60 * 60 * 1000);
+                let timestampPlus = time1 + (4 * 60 * 60 * 1000);
                 let timePlus = new Date(timestampPlus);
-                let result = timePlus.toUTCString();
                 let hours = timePlus.getHours();
                 let minutes = timePlus.getMinutes();
                 let ampm = hours >= 12 ? 'PM' : 'AM';
@@ -49,7 +47,7 @@ function ToDo() {
     function removePost(post) {
         setPosts(posts.filter(p => p.id !== post.id))
     }
-
+    
     return (
         <section className="todo__container">
             <h1 className='todo__title'>todo</h1>
@@ -63,7 +61,7 @@ function ToDo() {
                 </div>
                 <div className="todo__components">
                     <ToDoForm create={createPost} />
-                    <ToDoList remove={removePost} posts={posts} />
+                    <ToDoList currenttime={currenttime} remove={removePost} posts={posts} />
                 </div>
             </section>
         </section>
