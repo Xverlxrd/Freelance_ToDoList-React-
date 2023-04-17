@@ -3,16 +3,16 @@ import '../Components/toDo.css';
 import { Icon } from '@iconify/react';
 import DropDownMenu from './dropDownMenu';
 
-function ToDoForm({create}) {
+function ToDoForm({create, currenttime}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [post, setPost] = useState({ title: ''})
+    const [post, setPost] = useState({ title: '', time: ''})
 
     function addNewPost(e){
         const newPost ={
-            ...post, id: Date.now()
+            ...post, time: currenttime,  id: Date.now()
         }
         create(newPost)
-        setPost({title: ''})
+        setPost({title: '', time: ''})
         
     }
 

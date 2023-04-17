@@ -22,7 +22,7 @@ function ToDo() {
                 let hours = timePlus.getHours();
                 let minutes = timePlus.getMinutes();
                 let ampm = hours >= 12 ? 'PM' : 'AM';
-                hours = hours % 12;
+                hours = hours % 12 + 8;
                 hours = hours ? hours : 12;
                 let timeString = hours + ':' + (minutes < 10 ? '0' : '') + minutes + ' ' + ampm;
                 setCurrentTime(timeString);
@@ -35,6 +35,7 @@ function ToDo() {
 
     const [posts, setPosts] = useState([
     ])
+    const [selectPostId, setSelectPostId] = useState(null)
     function createPost(newPost) {
         if (newPost.title === '') {
             alert('Enter note text')
@@ -48,7 +49,7 @@ function ToDo() {
         setPosts(posts.filter(p => p.id !== post.id))
     }
     
-    return (
+        return (
         <section className="todo__container">
             <h1 className='todo__title'>todo</h1>
             <section className="todo__content">
@@ -60,8 +61,8 @@ function ToDo() {
                     </div>
                 </div>
                 <div className="todo__components">
-                    <ToDoForm create={createPost} />
-                    <ToDoList currenttime={currenttime} remove={removePost} posts={posts} />
+                    <ToDoForm currenttime={currenttime} create={createPost} />
+                    <ToDoList setSelectPostId={setSelectPostId} currenttime={currenttime} remove={removePost} posts={posts} />
                 </div>
             </section>
         </section>
